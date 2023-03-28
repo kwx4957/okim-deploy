@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Service
 metadata: 
   namesapce: argocd
-  name: hello-svccccf
+  name: hello-svccccff
 spec:
   type: LoadBalancer
   selector:
