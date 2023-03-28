@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+	namesapce: default
+	name: hello-deply
+spec:
+	relicas: 2
+	selector:
+		matchLabels:
+			app: hello-world
+	template:
+		metadata:
+			labels:
+				app: hello-world
+		spec:
+			containers:
+				- name: hello-world
+					image: kwx4957/hello-word:v3
+					ports:
+            - containerPort: 8080
