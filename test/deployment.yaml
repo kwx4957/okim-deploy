@@ -8,11 +8,11 @@ spec:
   selector:
     matchLabels:
       app: hello-world
-    template:
-      metadata:
-        labels:
-          app: hello-world
-      spec:
-        containers:
-          - name: hello-world
-            image: hello-world:latest
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+        - name: hello-world
+          image: hello-world:latest
