@@ -4,17 +4,17 @@ metadata:
   namesapce: agrocd
   name: hello-deply
 spec:
-  relicas: 2
+  relicas: 1
   selector:
     matchLabels:
       app: hello-world
     template:
     metadata:
       labels:
-      app: hello-world
+        app: hello-world
   spec:
     containers:
     - name: hello-world
-      image: kwx4957/hello-word:v3
+      image: c1t1d0s7/hello-word:v3
       ports:
         - containerPort: 8089
