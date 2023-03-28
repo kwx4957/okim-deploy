@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  namesapce: agrocd
+  namespace: agrocd
   name: hello-deply
 spec:
-  relicas: 1
+  replicas: 1
   selector:
     matchLabels:
       app: hello-world
