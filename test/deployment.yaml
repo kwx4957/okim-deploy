@@ -1,18 +1,27 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata: 
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata: 
+#   namespace: argocd
+#   name: hello-deply
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: hello-world
+#   template:
+#     metadata:
+#       labels:
+#         app: hello-world
+#     spec:
+#       containers:
+#         - name: hello-world
+#           image: hello-world:latest
+apiVersionL: v1
+kind: Pod
+metadata:
   namespace: argocd
-  name: hello-deply
+  name: ttttttttttt
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: hello-world
-  template:
-    metadata:
-      labels:
-        app: hello-world
-    spec:
-      containers:
-        - name: hello-world
-          image: hello-world:latest
+  containers:
+  - name: tttttt-argo
+    image: hello-world:latest
