@@ -9,12 +9,12 @@ spec:
     matchLabels:
       app: hello-world
     template:
-    metadata:
-      labels:
-        app: hello-world
-  spec:
-    containers:
-    - name: hello-world
-      image: ghcr.io/c1t1d0s7/go-myweb:alpine
-      ports:
-        - containerPort: 8089
+      metadata:
+        labels:
+          app: hello-world
+      spec:
+        containers:
+          - name: hello-world
+            image: ghcr.io/c1t1d0s7/go-myweb:alpine
+            ports:
+              - containerPort: 8089
