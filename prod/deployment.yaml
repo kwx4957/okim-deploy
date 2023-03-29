@@ -4,7 +4,7 @@ metadata:
   name: ohkim
   namespace: ohkim
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: ohkim-api
