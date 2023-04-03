@@ -14,7 +14,7 @@ spec:
         app: ohkim-api
     spec:
       containers:
-      - image: kmss6905/ohkim-api:0.05
+      - image: kwx4957/okim:68
         name: ohkim-api
         ports:
         - containerPort: 8085
