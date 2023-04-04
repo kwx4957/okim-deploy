@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ohkim
+  namespace: ohkim
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ohkim-api
+  template:
+    metadata:
+      labels:
+        app: ohkim-api
+    spec:
+      containers:
+      - image: kwx4957/okim:71
+        name: ohkim-api
+        ports:
+        - containerPort: 8085
+          protocol: TCP
+      imagePullSecrets:
+      - name: dockersecret
