@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: kwx4957/okim-front:6
+        image: kwx4957/okim-front:7
         ports:
         - containerPort: 80
           protocol: TCP
