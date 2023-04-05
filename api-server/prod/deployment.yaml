@@ -1,20 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ohkim
+  name: ohkim-api
   namespace: ohkim
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: ohkim-api
+      tier: backend
   template:
     metadata:
       labels:
         app: ohkim-api
+        tier: backend
     spec:
       containers:
-      - image: kwx4957/okim:71
+      - image: "kmss6905/ohkim-api:1.1"
         name: ohkim-api
         ports:
         - containerPort: 8085

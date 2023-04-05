@@ -1,23 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ohkim
-  namespace: ohkim
+  name: frontend
+  labels:
+    app: ohkim-api
+    tier: frontend
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: ohkim-api
+      tier: frontend
   template:
     metadata:
       labels:
         app: ohkim-api
+        tier: frontend
     spec:
       containers:
-      - image: kwx4957/okim:71
-        name: ohkim-api
+      - name: frontend
+        image: "kmss6905/ohkim-front:1.0"
         ports:
-        - containerPort: 8085
+        - containerPort: 80
           protocol: TCP
       imagePullSecrets:
       - name: dockersecret

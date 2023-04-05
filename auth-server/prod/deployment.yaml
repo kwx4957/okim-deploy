@@ -1,23 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ohkim
+  name: ohkim-auth
   namespace: ohkim
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: ohkim-api
+      app: ohkim-auth
+      tier: auth
   template:
     metadata:
       labels:
-        app: ohkim-api
+        app: ohkim-auth
+        tier: auth
     spec:
       containers:
-      - image: kwx4957/okim:71
-        name: ohkim-api
+      - image: "kmss6905/ohkim-auth:1.0"
+        name: ohkim-auth
         ports:
-        - containerPort: 8085
+        - containerPort: 8082
           protocol: TCP
       imagePullSecrets:
       - name: dockersecret
