@@ -16,7 +16,7 @@ spec:
         tier: backend
     spec:
       containers:
-      - image: kwx4957/okim:18
+      - image: kwx4957/okim:19
         name: ohkim-api
         ports:
         - containerPort: 8085
