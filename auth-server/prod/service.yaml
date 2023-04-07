@@ -3,6 +3,10 @@ kind: Service
 metadata:
   name: ohkim-auth
   namespace: ohkim
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:ap-northeast-2:839877992608:certificate/fd36b6b5-6e85-42d5-8faf-dd55b3249c55
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
 spec:
   selector:
     app: ohkim-auth
@@ -11,4 +15,9 @@ spec:
     - port: 80
       targetPort: 8082
       protocol: TCP
+      name: http
+    - port: 443
+      targetPort: 8082
+      protocol: TCP
+      name: https
   type: LoadBalancer
