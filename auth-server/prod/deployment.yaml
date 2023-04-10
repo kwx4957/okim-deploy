@@ -16,7 +16,7 @@ spec:
         tier: auth
     spec:
       containers:
-      - image: kwx4957/okim-auth:5
+      - image: kwx4957/okim-auth:6
         name: ohkim-auth
         ports:
         - containerPort: 8082
